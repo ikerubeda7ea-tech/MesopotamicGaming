@@ -1,0 +1,1521 @@
+/*Este documento no se usara, es solamente algo generado por curiosidad*/
+
+/* ==========================================================
+   MESOPOTAMIA GAMING · estilo babilónico (Puerta de Ishtar)
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
+:root {
+    --lapis:        #14213d;   /* azul lapislázuli (ladrillo vidriado) */
+    --lapis-claro:  #243b63;
+    --lapis-medio:  #1d4e89;
+    --oro:          #d4af37;
+    --oro-claro:    #f0d57a;
+    --oro-oscuro:   #a68a2a;
+    --arcilla:      #c98a4b;   /* terracota */
+    --arena:        #ecdcb4;   /* adobe claro */
+    --arena-oscura: #d9c28f;
+    --tinta:        #2b1a0e;   /* marrón casi negro */
+    --fuente-titulo: 'Cinzel', 'Trajan Pro', serif;
+    --fuente-texto:  'Cormorant Garamond', Georgia, serif;
+}
+
+/* ---------- Base ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+header, body, main, footer {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    font-size: 18px;
+    color: var(--tinta);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* textura de adobe: manchas suaves sobre arena */
+    background-color: var(--arena);
+    background-image:
+        radial-gradient(circle at 20% 15%, rgba(201, 138, 75, 0.18) 0, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(20, 33, 61, 0.10) 0, transparent 45%),
+        radial-gradient(circle at 50% 100%, rgba(166, 138, 42, 0.18) 0, transparent 50%),
+        repeating-linear-gradient(0deg, rgba(43, 26, 14, 0.03) 0 2px, transparent 2px 6px);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Imágenes (tus clases originales) ---------- */
+
+.gilgamesh {
+    width: 100px;
+    height: 125px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(240, 213, 122, 0.6));
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid var(--lapis);
+    background: var(--arena);
+    padding: 2px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.logo:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.itb {
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
+    background: var(--arena);
+    border: 3px double var(--lapis);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.tienda {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 6px double var(--oro);
+    outline: 4px solid var(--lapis);
+    outline-offset: -1px;
+    box-shadow: 0 8px 24px rgba(20, 33, 61, 0.5);
+}
+
+.portada {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 5px double var(--oro);
+    outline: 3px solid var(--lapis);
+    box-shadow: 6px 6px 0 var(--lapis), 0 8px 18px rgba(0, 0, 0, 0.35);
+    background: var(--lapis);
+}
+
+/* ---------- Cabecera: ladrillo esmaltado azul con oro ---------- */
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 28px 26px;
+    color: var(--oro-claro);
+    background-color: var(--lapis);
+    /* patrón de ladrillos vidriados */
+    background-image:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 40%),
+        repeating-linear-gradient(90deg, transparent 0 58px, rgba(212, 175, 55, 0.25) 58px 60px),
+        repeating-linear-gradient(0deg, transparent 0 38px, rgba(212, 175, 55, 0.25) 38px 40px);
+    border-bottom: 4px solid var(--oro);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Cenefa dorada inferior (alternancia de almenas) */
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 14px;
+    background:
+        repeating-linear-gradient(90deg,
+            var(--oro) 0 14px,
+            var(--lapis-medio) 14px 28px,
+            var(--oro) 28px 42px,
+            var(--arcilla) 42px 56px);
+    border-top: 2px solid var(--oro-claro);
+}
+
+h1 {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--oro);
+    text-shadow:
+        0 2px 0 #000,
+        0 0 14px rgba(240, 213, 122, 0.55);
+}
+
+h1::before,
+h1::after {
+    content: "◆";
+    font-size: 0.4em;
+    vertical-align: middle;
+    margin: 0 0.8em;
+    color: var(--oro-claro);
+}
+
+/* ---------- Navegación ---------- */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    display: block;
+    padding: 8px 18px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--oro);
+    border: 2px solid var(--oro);
+    background: rgba(0, 0, 0, 0.25);
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
+    transition: background 0.25s, color 0.25s;
+}
+
+nav a:hover {
+    background: var(--oro);
+    color: var(--lapis);
+}
+
+/* ---------- Contenido principal ---------- */
+
+main {
+    flex: 1;
+    padding: 30px 24px 40px;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+main section {
+    margin-bottom: 30px;
+}
+
+/* ocultar contenedores vacíos */
+article:empty,
+aside:empty {
+    display: none;
+}
+
+h2 {
+    font-family: var(--fuente-titulo);
+    font-size: 2rem;
+    text-align: center;
+    color: var(--lapis);
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px double var(--oro-oscuro);
+    letter-spacing: 0.08em;
+}
+
+h2::before,
+h2::after {
+    content: "❖";
+    margin: 0 0.5em;
+    color: var(--oro-oscuro);
+}
+
+/* ---------- Fichas de juego ---------- */
+
+article {
+    margin: 5px 0 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 22px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(201, 138, 75, 0.18)),
+        var(--arena-oscura);
+    border: 4px double var(--oro-oscuro);
+    outline: 3px solid var(--lapis);
+    outline-offset: 3px;
+    box-shadow: 0 10px 24px rgba(43, 26, 14, 0.35);
+    position: relative;
+}
+
+/* esquinas decorativas */
+article::before,
+article::after {
+    content: "◆";
+    position: absolute;
+    font-size: 16px;
+    color: var(--lapis);
+    background: var(--oro);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+article::before { top: -13px; left: -13px; }
+article::after  { bottom: -13px; right: -13px; }
+
+/* ---------- Tablas: tablilla de arcilla / lapislázuli ---------- */
+
+table {
+    flex: 1;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--lapis);
+    color: var(--arena);/* ==========================================================
+   MESOPOTAMIA GAMING · estilo babilónico (Puerta de Ishtar)
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
+:root {
+    --lapis:        #14213d;   /* azul lapislázuli (ladrillo vidriado) */
+    --lapis-claro:  #243b63;
+    --lapis-medio:  #1d4e89;
+    --oro:          #d4af37;
+    --oro-claro:    #f0d57a;
+    --oro-oscuro:   #a68a2a;
+    --arcilla:      #c98a4b;   /* terracota */
+    --arena:        #ecdcb4;   /* adobe claro */
+    --arena-oscura: #d9c28f;
+    --tinta:        #2b1a0e;   /* marrón casi negro */
+    --fuente-titulo: 'Cinzel', 'Trajan Pro', serif;
+    --fuente-texto:  'Cormorant Garamond', Georgia, serif;
+}
+
+/* ---------- Base ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+header, body, main, footer {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    font-size: 18px;
+    color: var(--tinta);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* textura de adobe: manchas suaves sobre arena */
+    background-color: var(--arena);
+    background-image:
+        radial-gradient(circle at 20% 15%, rgba(201, 138, 75, 0.18) 0, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(20, 33, 61, 0.10) 0, transparent 45%),
+        radial-gradient(circle at 50% 100%, rgba(166, 138, 42, 0.18) 0, transparent 50%),
+        repeating-linear-gradient(0deg, rgba(43, 26, 14, 0.03) 0 2px, transparent 2px 6px);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Imágenes (tus clases originales) ---------- */
+
+.gilgamesh {
+    width: 100px;
+    height: 125px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(240, 213, 122, 0.6));
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid var(--lapis);
+    background: var(--arena);
+    padding: 2px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.logo:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.itb {
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
+    background: var(--arena);
+    border: 3px double var(--lapis);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.tienda {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 6px double var(--oro);
+    outline: 4px solid var(--lapis);
+    outline-offset: -1px;
+    box-shadow: 0 8px 24px rgba(20, 33, 61, 0.5);
+}
+
+.portada {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 5px double var(--oro);
+    outline: 3px solid var(--lapis);
+    box-shadow: 6px 6px 0 var(--lapis), 0 8px 18px rgba(0, 0, 0, 0.35);
+    background: var(--lapis);
+}
+
+/* ---------- Cabecera: ladrillo esmaltado azul con oro ---------- */
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 28px 26px;
+    color: var(--oro-claro);
+    background-color: var(--lapis);
+    /* patrón de ladrillos vidriados */
+    background-image:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 40%),
+        repeating-linear-gradient(90deg, transparent 0 58px, rgba(212, 175, 55, 0.25) 58px 60px),
+        repeating-linear-gradient(0deg, transparent 0 38px, rgba(212, 175, 55, 0.25) 38px 40px);
+    border-bottom: 4px solid var(--oro);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Cenefa dorada inferior (alternancia de almenas) */
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 14px;
+    background:
+        repeating-linear-gradient(90deg,
+            var(--oro) 0 14px,
+            var(--lapis-medio) 14px 28px,
+            var(--oro) 28px 42px,
+            var(--arcilla) 42px 56px);
+    border-top: 2px solid var(--oro-claro);
+}
+
+h1 {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--oro);
+    text-shadow:
+        0 2px 0 #000,
+        0 0 14px rgba(240, 213, 122, 0.55);
+}
+
+h1::before,
+h1::after {
+    content: "◆";
+    font-size: 0.4em;
+    vertical-align: middle;
+    margin: 0 0.8em;
+    color: var(--oro-claro);
+}
+
+/* ---------- Navegación ---------- */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    display: block;
+    padding: 8px 18px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--oro);
+    border: 2px solid var(--oro);
+    background: rgba(0, 0, 0, 0.25);
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
+    transition: background 0.25s, color 0.25s;
+}
+
+nav a:hover {
+    background: var(--oro);
+    color: var(--lapis);
+}
+
+/* ---------- Contenido principal ---------- */
+
+main {
+    flex: 1;
+    padding: 30px 24px 40px;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+main section {
+    margin-bottom: 30px;
+}
+
+/* ocultar contenedores vacíos */
+article:empty,
+aside:empty {
+    display: none;
+}
+
+h2 {
+    font-family: var(--fuente-titulo);
+    font-size: 2rem;
+    text-align: center;
+    color: var(--lapis);
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px double var(--oro-oscuro);
+    letter-spacing: 0.08em;
+}
+
+h2::before,
+h2::after {
+    content: "❖";
+    margin: 0 0.5em;
+    color: var(--oro-oscuro);
+}
+
+/* ---------- Fichas de juego ---------- */
+
+article {
+    margin: 5px 0 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 22px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(201, 138, 75, 0.18)),
+        var(--arena-oscura);
+    border: 4px double var(--oro-oscuro);
+    outline: 3px solid var(--lapis);
+    outline-offset: 3px;
+    box-shadow: 0 10px 24px rgba(43, 26, 14, 0.35);
+    position: relative;
+}
+
+/* esquinas decorativas */
+article::before,
+article::after {
+    content: "◆";
+    position: absolute;
+    font-size: 16px;
+    color: var(--lapis);
+    background: var(--oro);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+article::before { top: -13px; left: -13px; }
+article::after  { bottom: -13px; right: -13px; }
+
+/* ---------- Tablas: tablilla de arcilla / lapislázuli ---------- */
+
+table {
+    flex: 1;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--lapis);
+    color: var(--arena);
+    margin-top: 0;
+    border: 3px solid var(--oro);
+    box-shadow: 0 0 0 4px var(--lapis), 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+caption {
+    font-family: var(--fuente-titulo);
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--lapis);
+    background: var(--oro);
+    padding: 12px;
+    letter-spacing: 0.08em;
+    border: 3px solid var(--oro-oscuro);
+    border-bottom: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+caption a {
+    display: block;
+    color: inherit;
+    text-decoration: underline double;
+    text-underline-offset: 5px;
+    transition: color 0.2s;
+}
+
+caption a:hover {
+    color: var(--lapis-medio);
+}
+
+th {
+    font-family: var(--fuente-titulo);
+    background-color: var(--oro);
+    color: var(--tinta);
+    padding: 12px;
+    border: 1px solid var(--oro-oscuro);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 12px 10px;
+    border: 1px solid var(--oro);
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+td:last-child {
+    text-align: left;
+}
+
+tbody tr {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent);
+}
+
+tfoot {
+    background-color: var(--lapis-claro);
+    color: var(--oro-claro);
+    font-style: italic;
+}
+
+tfoot td {
+    text-align: center;
+    border-top: 2px solid var(--oro);
+}
+
+/* ---------- Formulario de contacto ---------- */
+
+form {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+article:has(form) {
+    display: block;
+}
+
+fieldset {
+    margin: 0 0 20px;
+    padding: 20px 24px 24px;
+    border: 3px double var(--oro-oscuro);
+    background: rgba(236, 220, 180, 0.6);
+    box-shadow: inset 0 0 0 3px var(--lapis);
+}
+
+label {
+    display: block;
+    margin: 12px 0 4px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--lapis);
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: var(--fuente-texto);
+    font-size: 1.1rem;
+    color: var(--tinta);
+    background: var(--arena);
+    border: 2px solid var(--lapis);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: var(--oro-oscuro);
+    box-shadow: 0 0 0 3px var(--oro);
+}
+
+input[type="submit"],
+input[type="reset"] {
+    margin: 18px 10px 0 0;
+    padding: 10px 26px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--oro);
+    background: var(--lapis);
+    border: 3px double var(--oro);
+    transition: background 0.25s, color 0.25s, transform 0.15s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background: var(--oro);
+    color: var(--lapis);
+    transform: translateY(-2px);
+}
+
+/* ---------- Pie de página ---------- */
+
+footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 26px 20px 16px;
+    color: var(--oro-claro);
+    background-color: var(--lapis);
+    background-image:
+        repeating-linear-gradient(90deg, transparent 0 58px, rgba(212, 175, 55, 0.2) 58px 60px),
+        repeating-linear-gradient(0deg, transparent 0 38px, rgba(212, 175, 55, 0.2) 38px 40px);
+    border-top: 4px solid var(--oro);
+    margin: 0;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 14px;
+    background:
+        repeating-linear-gradient(90deg,
+            var(--oro) 0 14px,
+            var(--lapis-medio) 14px 28px,
+            var(--oro) 28px 42px,
+            var(--arcilla) 42px 56px);
+    border-bottom: 2px solid var(--oro-claro);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 30px;
+    }/* ==========================================================
+   MESOPOTAMIA GAMING · estilo babilónico (Puerta de Ishtar)
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:wght@400;600;700&display=swap');
+
+:root {
+    --lapis:        #14213d;   /* azul lapislázuli (ladrillo vidriado) */
+    --lapis-claro:  #243b63;
+    --lapis-medio:  #1d4e89;
+    --oro:          #d4af37;
+    --oro-claro:    #f0d57a;
+    --oro-oscuro:   #a68a2a;
+    --arcilla:      #c98a4b;   /* terracota */
+    --arena:        #ecdcb4;   /* adobe claro */
+    --arena-oscura: #d9c28f;
+    --tinta:        #2b1a0e;   /* marrón casi negro */
+    --fuente-titulo: 'Cinzel', 'Trajan Pro', serif;
+    --fuente-texto:  'Cormorant Garamond', Georgia, serif;
+}
+
+/* ---------- Base ---------- */
+
+* {
+    box-sizing: border-box;
+}
+
+header, body, main, footer {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--fuente-texto);
+    font-size: 18px;
+    color: var(--tinta);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* textura de adobe: manchas suaves sobre arena */
+    background-color: var(--arena);
+    background-image:
+        radial-gradient(circle at 20% 15%, rgba(201, 138, 75, 0.18) 0, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(20, 33, 61, 0.10) 0, transparent 45%),
+        radial-gradient(circle at 50% 100%, rgba(166, 138, 42, 0.18) 0, transparent 50%),
+        repeating-linear-gradient(0deg, rgba(43, 26, 14, 0.03) 0 2px, transparent 2px 6px);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Imágenes (tus clases originales) ---------- */
+
+.gilgamesh {
+    width: 100px;
+    height: 125px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(240, 213, 122, 0.6));
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 2px solid var(--lapis);
+    background: var(--arena);
+    padding: 2px;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.logo:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.itb {
+    width: 150px;
+    height: 80px;
+    object-fit: contain;
+    background: var(--arena);
+    border: 3px double var(--lapis);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.tienda {
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 6px double var(--oro);
+    outline: 4px solid var(--lapis);
+    outline-offset: -1px;
+    box-shadow: 0 8px 24px rgba(20, 33, 61, 0.5);
+}
+
+.portada {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 5px double var(--oro);
+    outline: 3px solid var(--lapis);
+    box-shadow: 6px 6px 0 var(--lapis), 0 8px 18px rgba(0, 0, 0, 0.35);
+    background: var(--lapis);
+}
+
+/* ---------- Cabecera: ladrillo esmaltado azul con oro ---------- */
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 28px 26px;
+    color: var(--oro-claro);
+    background-color: var(--lapis);
+    /* patrón de ladrillos vidriados */
+    background-image:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 40%),
+        repeating-linear-gradient(90deg, transparent 0 58px, rgba(212, 175, 55, 0.25) 58px 60px),
+        repeating-linear-gradient(0deg, transparent 0 38px, rgba(212, 175, 55, 0.25) 38px 40px);
+    border-bottom: 4px solid var(--oro);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* Cenefa dorada inferior (alternancia de almenas) */
+header::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 14px;
+    background:
+        repeating-linear-gradient(90deg,
+            var(--oro) 0 14px,
+            var(--lapis-medio) 14px 28px,
+            var(--oro) 28px 42px,
+            var(--arcilla) 42px 56px);
+    border-top: 2px solid var(--oro-claro);
+}
+
+h1 {
+    flex: 1;
+    margin: 0;
+    text-align: center;
+    font-family: var(--fuente-titulo);
+    font-weight: 900;
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--oro);
+    text-shadow:
+        0 2px 0 #000,
+        0 0 14px rgba(240, 213, 122, 0.55);
+}
+
+h1::before,
+h1::after {
+    content: "◆";
+    font-size: 0.4em;
+    vertical-align: middle;
+    margin: 0 0.8em;
+    color: var(--oro-claro);
+}
+
+/* ---------- Navegación ---------- */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    display: block;
+    padding: 8px 18px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--oro);
+    border: 2px solid var(--oro);
+    background: rgba(0, 0, 0, 0.25);
+    clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
+    transition: background 0.25s, color 0.25s;
+}
+
+nav a:hover {
+    background: var(--oro);
+    color: var(--lapis);
+}
+
+/* ---------- Contenido principal ---------- */
+
+main {
+    flex: 1;
+    padding: 30px 24px 40px;
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+main section {
+    margin-bottom: 30px;
+}
+
+/* ocultar contenedores vacíos */
+article:empty,
+aside:empty {
+    display: none;
+}
+
+h2 {
+    font-family: var(--fuente-titulo);
+    font-size: 2rem;
+    text-align: center;
+    color: var(--lapis);
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px double var(--oro-oscuro);
+    letter-spacing: 0.08em;
+}
+
+h2::before,
+h2::after {
+    content: "❖";
+    margin: 0 0.5em;
+    color: var(--oro-oscuro);
+}
+
+/* ---------- Fichas de juego ---------- */
+
+article {
+    margin: 5px 0 28px;
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding: 22px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.35), rgba(201, 138, 75, 0.18)),
+        var(--arena-oscura);
+    border: 4px double var(--oro-oscuro);
+    outline: 3px solid var(--lapis);
+    outline-offset: 3px;
+    box-shadow: 0 10px 24px rgba(43, 26, 14, 0.35);
+    position: relative;
+}
+
+/* esquinas decorativas */
+article::before,
+article::after {
+    content: "◆";
+    position: absolute;
+    font-size: 16px;
+    color: var(--lapis);
+    background: var(--oro);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+article::before { top: -13px; left: -13px; }
+article::after  { bottom: -13px; right: -13px; }
+
+/* ---------- Tablas: tablilla de arcilla / lapislázuli ---------- */
+
+table {
+    flex: 1;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--lapis);
+    color: var(--arena);
+    margin-top: 0;
+    border: 3px solid var(--oro);
+    box-shadow: 0 0 0 4px var(--lapis), 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+caption {
+    font-family: var(--fuente-titulo);
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--lapis);
+    background: var(--oro);
+    padding: 12px;
+    letter-spacing: 0.08em;
+    border: 3px solid var(--oro-oscuro);
+    border-bottom: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+caption a {
+    display: block;
+    color: inherit;
+    text-decoration: underline double;
+    text-underline-offset: 5px;
+    transition: color 0.2s;
+}
+
+caption a:hover {
+    color: var(--lapis-medio);
+}
+
+th {
+    font-family: var(--fuente-titulo);
+    background-color: var(--oro);
+    color: var(--tinta);
+    padding: 12px;
+    border: 1px solid var(--oro-oscuro);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 12px 10px;
+    border: 1px solid var(--oro);
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+td:last-child {
+    text-align: left;
+}
+
+tbody tr {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent);
+}
+
+tfoot {
+    background-color: var(--lapis-claro);
+    color: var(--oro-claro);
+    font-style: italic;
+}
+
+tfoot td {
+    text-align: center;
+    border-top: 2px solid var(--oro);
+}
+
+/* ---------- Formulario de contacto ---------- */
+
+form {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+article:has(form) {
+    display: block;
+}
+
+fieldset {
+    margin: 0 0 20px;
+    padding: 20px 24px 24px;
+    border: 3px double var(--oro-oscuro);
+    background: rgba(236, 220, 180, 0.6);
+    box-shadow: inset 0 0 0 3px var(--lapis);
+}
+
+label {
+    display: block;
+    margin: 12px 0 4px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--lapis);
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: var(--fuente-texto);
+    font-size: 1.1rem;
+    color: var(--tinta);
+    background: var(--arena);
+    border: 2px solid var(--lapis);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: var(--oro-oscuro);
+    box-shadow: 0 0 0 3px var(--oro);
+}
+
+input[type="submit"],
+input[type="reset"] {
+    margin: 18px 10px 0 0;
+    padding: 10px 26px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--oro);
+    background: var(--lapis);
+    border: 3px double var(--oro);
+    transition: background 0.25s, color 0.25s, transform 0.15s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background: var(--oro);
+    color: var(--lapis);
+    transform: translateY(-2px);
+}
+
+/* ---------- Pie de página ---------- */
+
+footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 26px 20px 16px;
+    color: var(--oro-claro);
+    background-color: var(--lapis);
+    background-image:
+        repeating-linear-gradient(90deg, transparent 0 58px, rgba(212, 175, 55, 0.2) 58px 60px),
+        repeating-linear-gradient(0deg, transparent 0 38px, rgba(212, 175, 55, 0.2) 38px 40px);
+    border-top: 4px solid var(--oro);
+    margin: 0;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 14px;
+    background:
+        repeating-linear-gradient(90deg,
+            var(--oro) 0 14px,
+            var(--lapis-medio) 14px 28px,
+            var(--oro) 28px 42px,
+            var(--arcilla) 42px 56px);
+    border-bottom: 2px solid var(--oro-claro);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    h1 {
+        flex-basis: 100%;
+        order: 3;
+    }
+
+    article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 8px 6px;
+    }
+}
+
+@media (max-width: 560px) {
+    main {
+        padding: 20px 12px 30px;
+    }
+
+    .portada {
+        width: 200px;
+        height: 250px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+}
+
+    h1 {
+        flex-basis: 100%;
+        order: 3;
+    }
+
+    article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 8px 6px;
+    }
+}
+
+@media (max-width: 560px) {
+    main {
+        padding: 20px 12px 30px;
+    }
+
+    .portada {
+        width: 200px;
+        height: 250px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+}
+    margin-top: 0;
+    border: 3px solid var(--oro);
+    box-shadow: 0 0 0 4px var(--lapis), 0 8px 16px rgba(0, 0, 0, 0.35);
+}
+
+caption {
+    font-family: var(--fuente-titulo);
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--lapis);
+    background: var(--oro);
+    padding: 12px;
+    letter-spacing: 0.08em;
+    border: 3px solid var(--oro-oscuro);
+    border-bottom: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+caption a {
+    display: block;
+    color: inherit;
+    text-decoration: underline double;
+    text-underline-offset: 5px;
+    transition: color 0.2s;
+}
+
+caption a:hover {
+    color: var(--lapis-medio);
+}
+
+th {
+    font-family: var(--fuente-titulo);
+    background-color: var(--oro);
+    color: var(--tinta);
+    padding: 12px;
+    border: 1px solid var(--oro-oscuro);
+    font-size: 0.9rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 12px 10px;
+    border: 1px solid var(--oro);
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+td:last-child {
+    text-align: left;
+}
+
+tbody tr {
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent);
+}
+
+tfoot {
+    background-color: var(--lapis-claro);
+    color: var(--oro-claro);
+    font-style: italic;
+}
+
+tfoot td {
+    text-align: center;
+    border-top: 2px solid var(--oro);
+}
+
+/* ---------- Formulario de contacto ---------- */
+
+form {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+article:has(form) {
+    display: block;
+}
+
+fieldset {
+    margin: 0 0 20px;
+    padding: 20px 24px 24px;
+    border: 3px double var(--oro-oscuro);
+    background: rgba(236, 220, 180, 0.6);
+    box-shadow: inset 0 0 0 3px var(--lapis);
+}
+
+label {
+    display: block;
+    margin: 12px 0 4px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--lapis);
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: var(--fuente-texto);
+    font-size: 1.1rem;
+    color: var(--tinta);
+    background: var(--arena);
+    border: 2px solid var(--lapis);
+    border-radius: 0;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: var(--oro-oscuro);
+    box-shadow: 0 0 0 3px var(--oro);
+}
+
+input[type="submit"],
+input[type="reset"] {
+    margin: 18px 10px 0 0;
+    padding: 10px 26px;
+    font-family: var(--fuente-titulo);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--oro);
+    background: var(--lapis);
+    border: 3px double var(--oro);
+    transition: background 0.25s, color 0.25s, transform 0.15s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background: var(--oro);
+    color: var(--lapis);
+    transform: translateY(-2px);
+}
+
+/* ---------- Pie de página ---------- */
+
+footer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    padding: 26px 20px 16px;
+    color: var(--oro-claro);
+    background-color: var(--lapis);
+    background-image:
+        repeating-linear-gradient(90deg, transparent 0 58px, rgba(212, 175, 55, 0.2) 58px 60px),
+        repeating-linear-gradient(0deg, transparent 0 38px, rgba(212, 175, 55, 0.2) 38px 40px);
+    border-top: 4px solid var(--oro);
+    margin: 0;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 14px;
+    background:
+        repeating-linear-gradient(90deg,
+            var(--oro) 0 14px,
+            var(--lapis-medio) 14px 28px,
+            var(--oro) 28px 42px,
+            var(--arcilla) 42px 56px);
+    border-bottom: 2px solid var(--oro-claro);
+}
+
+footer p {
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    h1 {
+        flex-basis: 100%;
+        order: 3;
+    }
+
+    article {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
+
+    th, td {
+        padding: 8px 6px;
+    }
+}
+
+@media (max-width: 560px) {
+    main {
+        padding: 20px 12px 30px;
+    }
+
+    .portada {
+        width: 200px;
+        height: 250px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+}

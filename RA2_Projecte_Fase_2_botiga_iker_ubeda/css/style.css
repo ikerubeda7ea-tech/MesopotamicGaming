@@ -1,0 +1,355 @@
+/* ==========================================================
+   MESOPOTAMIA GAMING · estil babilònic
+   ----------------------------------------------------------
+   ÍNDEX
+   1. Global
+   2. Imatges
+   3. Capçalera i navegació
+   4. Contingut principal (títols, fitxes, taules)
+   5. Formulari de contacte
+   6. Peu de pàgina
+
+   Paleta:
+   #14213d lapislàtzuli   #243b63 lapislàtzuli clar
+   #d4af37 or             #f0d57a or clar     #a68a2a or fosc
+   #ecdcb4 sorra          #d9c28f / #e6d3a0 tons d'adob
+   #2b1a0e marró fosc (text)
+   ========================================================== */
+
+
+/* ---------- 1. GLOBAL ---------- */
+
+header, body, main, footer {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ecdcb4;
+    color: #2b1a0e;
+    font-family: "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+
+/* Tipografia "monumental" per a títols, capçaleres i etiquetes */
+h1, h2, caption, th, label, nav a {
+    font-family: "Copperplate", "Copperplate Gothic Light", "Trajan Pro", Georgia, serif;
+    font-weight: bold;
+}
+
+
+/* ---------- 2. IMATGES ---------- */
+
+.gilgamesh {
+    width: 100px;
+    height: 125px;
+}
+
+.itb {
+    width: 150px;
+    height: 80px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #d4af37;
+    padding: 2px;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}
+
+.tienda {
+    display: block;
+    width: 90%;
+    max-width: 850px;
+    height: auto;
+    margin: 0 auto 1.5rem auto;
+    border: 6px double #a68a2a;
+}
+
+/* Portades: la classe i la imatge de la fitxa (que no té classe) */
+.portada, article > img {
+    width: 250px;
+    height: 300px;
+    flex-shrink: 0;
+    border: 5px double #a68a2a;
+    background-color: #14213d;
+}
+
+
+/* ---------- 3. CAPÇALERA I NAVEGACIÓ ---------- */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+    background-color: #14213d;
+    border-top: 4px solid #d4af37;
+    border-bottom: 10px double #d4af37;
+}
+
+header h1 {
+    flex-grow: 1;
+    text-align: center;
+    color: #d4af37;
+    font-size: 2.5rem;
+    letter-spacing: 6px;
+}
+
+/* Rombes decoratives a banda i banda del títol */
+h1:before, h1:after {
+    content: "◆";
+    margin: 0 1rem;
+    font-size: 0.5em;
+    color: #f0d57a;
+}
+
+nav ul {
+    display: flex;
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border: 2px solid #d4af37;
+    color: #d4af37;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+nav a:hover {
+    background-color: #d4af37;
+    color: #14213d;
+}
+
+nav a:active {
+    background-color: #f0d57a;
+}
+
+
+/* ---------- 4. CONTINGUT PRINCIPAL ---------- */
+
+main {
+    flex-grow: 1;
+    padding: 1.5rem;
+}
+
+h2 {
+    width: 100%;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px double #a68a2a;
+    text-align: center;
+    color: #14213d;
+    font-size: 2rem;
+    letter-spacing: 3px;
+}
+
+h2:before, h2:after {
+    content: "❖";
+    margin: 0 0.5em;
+    color: #a68a2a;
+}
+
+section + section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1.5rem;
+}
+
+/* Fitxa de cada joc */
+article {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background-color: #d9c28f;
+    border: 4px double #a68a2a;
+}
+
+article:nth-child(even) {
+    background-color: #e6d3a0;
+}
+
+/* Rombes a dues cantonades de cada fitxa */
+article:before, article:after {
+    content: "◆";
+    position: absolute;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: #14213d;
+}
+
+article:before {
+    top: -0.8rem;
+    left: -0.5rem;
+}
+
+article:after {
+    bottom: -0.8rem;
+    right: -0.5rem;
+}
+
+/* Contenidors buits: no s'han de veure */
+article:empty, aside:empty {
+    display: none;
+}
+
+/* Taules */
+table {
+    flex-grow: 1;
+    width: 20%;
+    border-collapse: collapse;
+    background-color: #14213d;
+    color: #ecdcb4;
+    border: 3px solid #d4af37;
+}
+
+caption {
+    padding: 0.6rem;
+    background-color: #d4af37;
+    color: #14213d;
+    border: 3px solid #a68a2a;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+caption a {
+    color: #14213d;
+    text-decoration: underline;
+}
+
+caption a:hover {
+    color: #243b63;
+}
+
+th {
+    padding: 0.1rem;
+    background-color: #d4af37;
+    color: #14213d;
+    border: 1px solid #a68a2a;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 0.1rem;
+    border: 1px solid #d4af37;
+    text-align: center;
+}
+
+tbody td:last-child {
+    text-align: left;
+    display: block;
+    
+    overflow: auto;
+}
+
+tbody tr:hover {
+    background-color: #243b63;
+}
+
+tfoot {
+    background-color: #243b63;
+    color: #f0d57a;
+    font-style: italic;
+}
+
+
+/* ---------- 5. FORMULARI DE CONTACTE ---------- */
+
+form {
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+fieldset {
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    background-color: #ecdcb4;
+    border: 4px double #a68a2a;
+}
+
+label {
+    display: block;
+    margin-top: 0.8rem;
+    color: #14213d;
+    letter-spacing: 1px;
+}
+
+input {
+    padding: 0.5rem;
+    background-color: #f6ecd0;
+    color: #2b1a0e;
+    border: 2px solid #14213d;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+}
+
+#nom, #cognom, #email, #descripcio {
+    width: 90%;
+}
+
+input:focus {
+    background-color: #ffffff;
+    border-color: #d4af37;
+}
+
+/* Botons (guardar i reset): últims dos <input> del segon fieldset */
+fieldset + fieldset input:last-child,
+fieldset + fieldset input:nth-last-child(2) {
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    background-color: #14213d;
+    color: #d4af37;
+    border-color: #d4af37;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+fieldset + fieldset input:last-child:hover,
+fieldset + fieldset input:nth-last-child(2):hover {
+    background-color: #d4af37;
+    color: #14213d;
+}
+
+
+/* ---------- 6. PEU DE PÀGINA ---------- */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #14213d;
+    color: #ecdcb4;
+    border-top: 10px double #d4af37;
+    border-bottom: 4px solid #d4af37;
+}
+
+footer p {
+    margin: 0;
+    font-style: italic;
+    letter-spacing: 1px;
+}
